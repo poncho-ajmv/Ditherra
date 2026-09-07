@@ -1,0 +1,202 @@
+{
+  "providers": {
+    "antigravity": {
+      "note": "Sesi\u00f3n activa de Antigravity CLI / User OAuth (sin necesidad de API key manual).",
+      "kind": "antigravity",
+      "vision": true,
+      "models": [
+        "antigravity-flash",
+        "antigravity-pro",
+        "antigravity-preview"
+      ]
+    },
+    "codex": {
+      "note": "Cuenta de ChatGPT separada para Ditherra mediante el Codex App Server oficial.",
+      "kind": "codex",
+      "vision": true
+    },
+    "ollama": {
+      "note": "Local, free, no key. Asks Ollama what you have pulled, and works out which of them can see images from the model name.",
+      "base_url": "http://localhost:11434/v1",
+      "api_key": "ollama",
+      "discover": true,
+      "vision": false,
+      "vision_match": [
+        "*llava*",
+        "*-vl*",
+        "*vision*",
+        "*minicpm-v*",
+        "*moondream*",
+        "*bakllava*"
+      ],
+      "setup_url": "https://ollama.com/download",
+      "setup_cmd": "ollama pull qwen3:8b"
+    },
+    "lmstudio": {
+      "note": "LM Studio local server. Start it from the app's Developer tab.",
+      "base_url": "http://localhost:1234/v1",
+      "api_key": "lm-studio",
+      "discover": true,
+      "vision": false,
+      "vision_match": [
+        "*llava*",
+        "*-vl*",
+        "*vision*",
+        "*minicpm-v*",
+        "*moondream*"
+      ],
+      "setup_url": "https://lmstudio.ai/download"
+    },
+    "gemini": {
+      "note": "Also the only provider that can generate concept art today \u2014 the endpoint uses the Google GenAI SDK directly. Model IDs verified against ai.google.dev/gemini-api/docs/models on 2026-08-22.",
+      "kind": "gemini",
+      "api_key_env": "GEMINI_API_KEY,GOOGLE_API_KEY,GOOGLE_APPLICATION_CREDENTIALS",
+      "vision": true,
+      "models": [
+        "gemini-3.7-flash",
+        "gemini-3.6-flash",
+        "gemini-3.1-pro-preview",
+        "gemini-3-flash-preview",
+        "gemini-3.5-flash",
+        "gemini-3.1-flash-lite",
+        "gemini-2.5-flash",
+        "gemini-2.5-pro"
+      ],
+      "image_models": [
+        "gemini-3.1-flash-image",
+        "gemini-3-pro-image",
+        "gemini-3.1-flash-lite-image",
+        "gemini-2.5-flash-image"
+      ],
+      "setup_url": "https://aistudio.google.com/apikey"
+    },
+    "openai": {
+      "base_url": "https://api.openai.com/v1",
+      "api_key_env": "OPENAI_API_KEY",
+      "vision": true,
+      "models": [
+        "gpt-5.4",
+        "gpt-5.4-mini",
+        "gpt-4.1-2025-04-14",
+        "gpt-4o-mini"
+      ],
+      "note": "Concept art too: the /images/generations path is generic, so any server that speaks it works by declaring image_models here \u2014 no code change. IDs from developers.openai.com/api/docs/models, checked 2026-08-22.",
+      "image_models": [
+        "gpt-image-2",
+        "gpt-image-1.5",
+        "gpt-image-1-mini"
+      ],
+      "setup_url": "https://platform.openai.com/api-keys"
+    },
+    "deepseek": {
+      "note": "Cheap and solid at tool calling.",
+      "base_url": "https://api.deepseek.com/v1",
+      "api_key_env": "DEEPSEEK_API_KEY",
+      "vision": false,
+      "models": [
+        "deepseek-chat",
+        "deepseek-reasoner"
+      ],
+      "setup_url": "https://platform.deepseek.com/api_keys"
+    },
+    "qwen": {
+      "note": "Alibaba DashScope. Use dashscope-intl.aliyuncs.com outside mainland China.",
+      "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+      "api_key_env": "DASHSCOPE_API_KEY",
+      "vision": false,
+      "models": [
+        "qwen-max",
+        "qwen-plus",
+        "qwen-turbo"
+      ],
+      "setup_url": "https://dashscope.console.aliyun.com/apiKey"
+    },
+    "qwen-vl": {
+      "note": "Same endpoint, vision on. Separate entry because vision is per-provider.",
+      "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+      "api_key_env": "DASHSCOPE_API_KEY",
+      "vision": true,
+      "models": [
+        "qwen-vl-max",
+        "qwen-vl-plus"
+      ],
+      "setup_url": "https://dashscope.console.aliyun.com/apiKey"
+    },
+    "glm": {
+      "note": "Zhipu GLM.",
+      "base_url": "https://open.bigmodel.cn/api/paas/v4",
+      "api_key_env": "ZHIPU_API_KEY",
+      "vision": false,
+      "models": [
+        "glm-4.6",
+        "glm-4-plus"
+      ],
+      "setup_url": "https://open.bigmodel.cn/usercenter/apikeys"
+    },
+    "kimi": {
+      "note": "Moonshot. Use api.moonshot.cn from mainland China.",
+      "base_url": "https://api.moonshot.ai/v1",
+      "api_key_env": "MOONSHOT_API_KEY",
+      "vision": false,
+      "models": [
+        "kimi-k2-turbo-preview",
+        "moonshot-v1-32k"
+      ],
+      "setup_url": "https://platform.moonshot.cn/console/api-keys"
+    },
+    "groq": {
+      "note": "Very fast, generous free tier.",
+      "base_url": "https://api.groq.com/openai/v1",
+      "api_key_env": "GROQ_API_KEY",
+      "vision": false,
+      "discover": true,
+      "vision_match": [
+        "*llama-4*",
+        "*scout*",
+        "*maverick*",
+        "*vision*",
+        "*-vl*",
+        "*llava*"
+      ],
+      "setup_url": "https://console.groq.com/keys"
+    },
+    "openrouter": {
+      "note": "One key, hundreds of models. Discovered live, filtered to the ones that can call tools, and each one reports whether it can see images. Models ending in :free cost nothing.",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key_env": "OPENROUTER_API_KEY",
+      "vision": false,
+      "discover": true,
+      "requires": [
+        "tools"
+      ],
+      "setup_url": "https://openrouter.ai/keys"
+    },
+    "pollinations": {
+      "note": "Free-tier concept art. Speaks POST /v1/images/generations, so it rides the generic OpenAI-compatible path \u2014 no adapter. Get a key at enter.pollinations.ai/keys (it stopped being keyless in 2026). Verified against APIDOCS.md v0.3.0 on 2026-08-22.",
+      "base_url": "https://gen.pollinations.ai/v1",
+      "api_key_env": "POLLINATIONS_API_KEY",
+      "vision": false,
+      "models": [],
+      "image_models": [
+        "flux",
+        "zimage",
+        "nanobanana-2",
+        "seedream5"
+      ],
+      "setup_url": "https://enter.pollinations.ai/keys"
+    },
+    "cloudflare": {
+      "note": "Free tier: 10,000 neurons/day, resets 00:00 UTC. Needs CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID (the account id is not a secret \u2014 put it in .env). Its OpenAI-compatible endpoints cover chat and embeddings only, so image generation goes through /ai/run. Verified 2026-08-22.",
+      "kind": "cloudflare",
+      "base_url": "https://api.cloudflare.com/client/v4",
+      "api_key_env": "CLOUDFLARE_API_TOKEN",
+      "vision": false,
+      "models": [],
+      "image_models": [
+        "@cf/black-forest-labs/flux-1-schnell"
+      ],
+      "setup_url": "https://dash.cloudflare.com/profile/api-tokens"
+    }
+  },
+  "default": "ollama/qwen3:4b"
+}
