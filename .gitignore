@@ -1,0 +1,32 @@
+venv/
+__pycache__/
+*.db
+output/
+references/
+.env
+service-account.json
+
+# Frontend build output (regenerable via `cd frontend && npm run build`)
+static/
+
+# Node
+frontend/node_modules/
+frontend/.next/
+
+# Local IDE / agent config
+.claude/
+
+# API keys saved from the settings panel
+secrets.json
+frontend/.env.local
+
+# Working notes: audit ledger and session handoff, both with file:line of
+# open issues. Local to the machine, not part of the published project.
+REVISION.md
+HANDOFF.md
+
+# Agent instructions and internal docs: local to the machine, not part of the
+# published project. The README is self-contained.
+CLAUDE.md
+AGENTS.md
+docs/
