@@ -76,6 +76,26 @@ DITHERRA_PYTHON=/ruta/a/python3.12 ./start.sh
 
 ---
 
+## Cómo ejecutarlo
+
+`start.sh` es el único comando que hace falta. No hay nada que activar a mano:
+busca un Python 3.10+, crea `venv/`, instala los dos sets de dependencias y los
+paquetes del frontend, libera el puerto 8500 si una corrida anterior lo dejó
+agarrado, y levanta la app. La segunda vez reutiliza todo y solo arranca.
+
+| Comando | Puerto | Qué es |
+|---|---|---|
+| `./start.sh` | <http://localhost:3000> | Desarrollo, el default. Next mira los archivos y empuja los cambios a la página abierta. La API queda en 8500. |
+| `./start.sh --build` | <http://localhost:8500> | Modo empaquetado. La UI se compila en `static/` y el backend la sirve desde el mismo origen, así que es un solo proceso y no hay CORS. |
+
+Usá el default mientras editás la interfaz. `--build` sirve un export compilado,
+así que los cambios de UI solo aparecen después de recompilar — y eso es justo la
+confusión de "mis cambios no aparecen".
+
+`Ctrl+C` detiene los dos procesos.
+
+---
+
 ## Uso
 
 La ventana son tres columnas: controles a la izquierda, lienzo en el centro,

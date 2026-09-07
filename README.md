@@ -76,6 +76,26 @@ DITHERRA_PYTHON=/path/to/python3.12 ./start.sh
 
 ---
 
+## Running it
+
+`start.sh` is the only command needed. There is nothing to activate by hand: it
+finds a Python 3.10+, creates `venv/`, installs both dependency sets and the
+frontend packages, frees port 8500 if a previous run left it held, and starts
+the app. A second run reuses everything and just starts.
+
+| Command | Port | What it is |
+|---|---|---|
+| `./start.sh` | <http://localhost:3000> | Development, the default. Next watches the files and pushes changes into the open page. The API is on 8500. |
+| `./start.sh --build` | <http://localhost:8500> | Packaged mode. The UI is compiled into `static/` and the backend serves it same-origin, so it is one process and there is no CORS. |
+
+Use the default while editing the interface. `--build` serves a compiled export,
+so UI changes only appear after a rebuild — and that is exactly the "my changes
+do not show up" confusion.
+
+`Ctrl+C` stops both processes.
+
+---
+
 ## Usage
 
 The window is three columns: controls on the left, canvas in the middle, history
