@@ -50,16 +50,8 @@ cp .env.example .env      # optional: keys can also be added from the UI
 ```
 
 `start.sh` creates `venv/`, installs both dependency sets, installs the frontend
-packages and starts two processes. Open <http://localhost:3000>.
-
-For the packaged single-process mode — the frontend compiled to a static export
-and served by the backend from the same origin:
-
-```bash
-./start.sh --build
-```
-
-Open <http://localhost:8500>.
+packages and starts two processes. Open <http://localhost:3000>. The packaged
+single-process mode is `./start.sh --build`, covered below.
 
 Free and with no key at all:
 

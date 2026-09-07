@@ -50,16 +50,8 @@ cp .env.example .env      # opcional: las keys también se pueden poner desde la
 ```
 
 `start.sh` crea `venv/`, instala los dos sets de dependencias, instala los
-paquetes del frontend y levanta dos procesos. Abrí <http://localhost:3000>.
-
-Para el modo empaquetado de un solo proceso — el frontend compilado a export
-estático y servido por el backend desde el mismo origen:
-
-```bash
-./start.sh --build
-```
-
-Abrí <http://localhost:8500>.
+paquetes del frontend y levanta dos procesos. Abrí <http://localhost:3000>. El
+modo empaquetado de un solo proceso es `./start.sh --build`, más abajo.
 
 Gratis y sin ninguna key:
 
