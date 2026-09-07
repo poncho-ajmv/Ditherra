@@ -12,6 +12,16 @@ and with Ollama or LM Studio not even those.
 
 *[Leer en español](README.es.md)*
 
+## Preview
+
+The Ditherra workspace: controls and palette on the left, the pixel canvas in
+the center, and history and activity on the right. It includes dark and light
+themes.
+
+[![Ditherra in dark mode](assets/screenshots/ditherra-interface-dark.png)](assets/screenshots/ditherra-interface-dark.png)
+
+[![Ditherra in light mode](assets/screenshots/ditherra-interface-light.png)](assets/screenshots/ditherra-interface-light.png)
+
 ---
 
 ## Requirements
@@ -303,6 +313,7 @@ tiles.py                The 16 autotile variants
 storage.py              The filesystem trust boundary
 codex_app_server.py     JSON-RPC bridge to codex app-server
 start.sh                One-command setup and start
+assets/screenshots/     The README images
 tests/                  Backend suite, isolated against a tmpdir
 frontend/
 ├── src/app/            layout.tsx and page.tsx

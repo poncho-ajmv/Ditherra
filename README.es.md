@@ -12,6 +12,16 @@ LM Studio ni eso.
 
 *[Read in English](README.md)*
 
+## Vista previa
+
+El espacio de trabajo de Ditherra: controles y paleta a la izquierda, lienzo
+de píxeles en el centro, e historial y actividad a la derecha. Incluye modo
+oscuro y claro.
+
+[![Ditherra en modo oscuro](assets/screenshots/ditherra-interface-dark.png)](assets/screenshots/ditherra-interface-dark.png)
+
+[![Ditherra en modo claro](assets/screenshots/ditherra-interface-light.png)](assets/screenshots/ditherra-interface-light.png)
+
 ---
 
 ## Requisitos
@@ -304,6 +314,7 @@ tiles.py                Las 16 variantes auto-tile
 storage.py              El trust boundary del filesystem
 codex_app_server.py     Puente JSON-RPC a codex app-server
 start.sh                Setup y arranque en un comando
+assets/screenshots/     Las imágenes del README
 tests/                  Suite del backend, aislada contra un tmpdir
 frontend/
 ├── src/app/            layout.tsx y page.tsx
